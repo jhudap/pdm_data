@@ -32,7 +32,7 @@ anes = pd.read_csv("ANES.csv")
 anes = anes.apply(pd.to_numeric,errors="coerce")
 ```
 
-This code forces pandas to parse the data as numerice, avoided problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis).
+This code forces pandas to parse the data as numeric, avoiding problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis).
 
 # Part One: Guided Questions (40 points)
 
