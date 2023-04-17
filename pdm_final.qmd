@@ -20,6 +20,20 @@ You'll work in a combination of R and Python, so you'll have some code chunks in
 
 Create a .qmd file that answers the questions in Part 1 and describes and performs your investigation in Part 2. The .qmd file should be attractive and well-formatted when rendered - for example, points will be reduced if you dump huge amounts of console output into the rendered document. You want the document to readable and meaningful. Display the code chunks as you go to show your work. Render an html file with your report and submit it along with the .qmd file.
 
+When you import the ANES data into Python, you might encounter some issues with data types. To avoid these problems, use the following code to make sure that pandas coerces all numbers into numeric format. Note that I renamed the actual .csv to `ANES.csv` here for clarity - the actual name when you download the document is longer.
+
+```{r,include=FALSE,echo=FALSE}
+print("hello")
+```
+
+```{python}
+#| eval: FALSE
+anes = pd.read_csv("ANES.csv") 
+anes = anes.apply(pd.to_numeric,errors="coerce")
+```
+
+This code forces pandas to parse the data as numerice, avoided problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis).
+
 # Part One: Guided Questions (40 points)
 
 ## Question 1 (2 points)
