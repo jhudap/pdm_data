@@ -33,7 +33,7 @@ anes = pd.read_csv("ANES.csv")
 anes2 = anes.apply(pd.to_numeric,errors="coerce")
 ```
 
-This code forces pandas to parse the data as numeric, avoiding problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis). If it occurs that pandas cannot coerce the data in a cell into a number, it will replace whatever value is there with a `NaN`.
+This code forces pandas to parse the data as numeric, avoiding problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis). If it occurs that pandas cannot coerce the data in a cell into a number, it will replace whatever value is there with a `NaN`. **Note:** there are a few columns in this data set where this transformation will cause a problem, like VCF0901b, which is the state postal abbreviation. If you want to do any state level analysis in Python, you'll need to account for this. I would just re-import the original .csv and then bind that unaltered state code column back to the transformed as a new column. In R, you shouldn't encounter any of these issues.
 
 # Part One: Guided Questions (40 points)
 
