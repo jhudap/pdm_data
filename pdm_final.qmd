@@ -86,8 +86,6 @@ Now, consider how this scale relates to respondents' partisan identity (strong D
 
 Which state had the lowest level of social trust in 2004? Which state had the highest?
 
-Finally, create a figure that displays median social trust by age bracket, starting from age 30 and advancing in 10 year increments.
-
 ## Question 7 (8 points)
 
 **R**
