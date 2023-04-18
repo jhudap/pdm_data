@@ -29,10 +29,11 @@ print("hello")
 ```{python}
 #| eval: FALSE
 anes = pd.read_csv("ANES.csv") 
-anes = anes.apply(pd.to_numeric,errors="coerce")
+
+anes2 = anes.apply(pd.to_numeric,errors="coerce")
 ```
 
-This code forces pandas to parse the data as numeric, avoiding problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis).
+This code forces pandas to parse the data as numeric, avoiding problems with mixed types of data in columns (something is weird about ANES original .csv file - this is the kind of thing that happens with data analysis). If it occurs that pandas cannot coerce the data in a cell into a number, it will replace whatever value is there with a `NaN`.
 
 # Part One: Guided Questions (40 points)
 
@@ -83,8 +84,6 @@ Several questions on this survey are related to social trust. I'm talking here a
 Construct a scale that adds together the responses to these three questions so that higher values indicate greater social trust. Set the scale so it runs from zero (the minimum amount of trust).
 
 Now, consider how this scale relates to respondents' partisan identity (strong Democrat to strong Republican). Do you see any evidence that greater social trust is associated with partisan identity?
-
-Which state had the lowest level of social trust in 2004? Which state had the highest?
 
 ## Question 7 (8 points)
 
